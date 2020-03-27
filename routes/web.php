@@ -11,22 +11,18 @@
 |
 */
 
-//Ruta por defecto
-Route::get('/', function () {
-    return view('welcome');
-});
+/* Ruta por defecto */
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/welcome', 'PagesController@inicio');
-
-Route::get('/fotos/{id?}', 'PagesController@fotos')->where('id', '[0-9]+'); //Solo aceptara números en el parametro
-
+Route::get('/', 'PagesController@notas');
+Route::get('/welcome', 'PagesController@welcome');
 Route::get('/blog', 'PagesController@blog')->name('enlace-blog'); //Podrá ser llamado desde href
-
 Route::get('/about', 'PagesController@about')->name('enlace-about');
-
 Route::get('/nosotros/{nombre?}', 'PagesController@nosotros')->name('enlace-nosotros');
+Route::get('/notas', 'PagesController@notas')->name('enlace-notas');
 
-Route::view('/landing', 'landing', ['wea' => "KKK"]); 
-Route::view('/landing2', 'landing2', ['wea' => "KKK 2"]); 
-
-Route::get('/notas', 'PagesController@notas')->name('enlace-nosotros');
+/* Pruebas */
+Route::get('/fotos/{id?}', 'PagesController@fotos')->where('id', '[0-9]+'); //Solo aceptara números en el parametro
+Route::view('/pruebas/landing', 'landing', ['wea' => "KKK"]); 

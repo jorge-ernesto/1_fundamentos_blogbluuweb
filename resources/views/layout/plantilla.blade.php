@@ -7,14 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container my-4">
         <a href="{{ route('enlace-blog') }}" class="btn btn-primary">Blog</a>
         <a href="{{ route('enlace-about') }}" class="btn btn-primary">About</a>
         <a href="{{ route('enlace-nosotros') }}" class="btn btn-primary">Nosotros</a>
+        <a href="{{ route('enlace-notas') }}" class="btn btn-primary">Notas</a>
     </div>
-
-    <div class="container">
-        @yield('seccion-title')
+    
+    <div class="container my-4">
+        @yield('seccion-container')    
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

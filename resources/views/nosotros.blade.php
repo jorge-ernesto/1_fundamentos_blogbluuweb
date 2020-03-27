@@ -1,11 +1,11 @@
 @extends('layout/plantilla')
 
-@section('seccion-title')
+@section('seccion-container')
     
     <h1>Este es mi equipo de trabajo</h1>
 
     @foreach($dataEquipo as $key=>$value)
-        <a href="{{ route('enlace-nosotros', $dataEquipo[$key]['nombre']) }}" class="h4 text-danger">{{ $dataEquipo[$key]['nombre'] }}</a><br>
+        <a href="{{ route('enlace-nosotros', $value['nombre']) }}" class="h4 text-danger">{{ $value['nombre'] }}</a><br>
     @endforeach
 
     @if(isset($nombre))
