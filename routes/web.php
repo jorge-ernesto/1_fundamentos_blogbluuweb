@@ -16,13 +16,18 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'PagesController@notas');
+Route::get('/', 'NotasController@notas');
 Route::get('/welcome', 'PagesController@welcome');
-Route::get('/blog', 'PagesController@blog')->name('enlace-blog'); //Podrá ser llamado desde href
+Route::get('/blog', 'PagesController@blog')->name('enlace-blog'); //name denota como sera llamado de href
 Route::get('/about', 'PagesController@about')->name('enlace-about');
 Route::get('/nosotros/{nombre?}', 'PagesController@nosotros')->name('enlace-nosotros');
-Route::get('/notas', 'PagesController@notas')->name('enlace-notas');
 
 /* Pruebas */
 Route::get('/fotos/{id?}', 'PagesController@fotos')->where('id', '[0-9]+'); //Solo aceptara números en el parametro
-Route::view('/pruebas/landing', 'landing', ['wea' => "KKK"]); 
+Route::view('/landing', 'landing', ['wea' => "KKK"]); 
+
+/* Notas */
+Route::get('/notas/{id?}', 'NotasController@listar')->name('notas.listar');
+Route::post('/notas/guardar', 'NotasController@guardar')->name('notas.guardar');
+Route::get('/notas/buscar/{id?}', 'NotasController@buscar')->name('notas.buscar');
+Route::put('/notas/editar/{id?}', 'NotasController@editar' )->name('notas.editar');
