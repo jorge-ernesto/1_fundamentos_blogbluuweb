@@ -1,5 +1,5 @@
 @extends('layout.plantilla')
 
 @section('seccion-main')
-    <h1>Blog</h1>
+    <h1 class="mt-4">Blog</h1>
 @endsection

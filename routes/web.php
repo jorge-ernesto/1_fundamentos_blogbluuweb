@@ -29,5 +29,6 @@ Route::view('/sb_admin', 'sb_admin', ['wea' => "KKK"]);
 /* Notas */
 Route::get('/notas/{id?}', 'NotasController@listar')->name('notas.listar');
 Route::post('/notas/guardar', 'NotasController@guardar')->name('notas.guardar');
-Route::get('/notas/buscar/{id?}', 'NotasController@buscar')->name('notas.buscar');
-Route::put('/notas/editar/{id?}', 'NotasController@editar' )->name('notas.editar');
+Route::get('/notas/buscar/{id}', 'NotasController@buscar')->name('notas.buscar');
+Route::put('/notas/editar/{id}', 'NotasController@editar' )->name('notas.editar');
+Route::get('/notas/eliminar/{id}', 'NotasController@eliminar' )->name('notas.eliminar');

@@ -1,8 +1,8 @@
 @extends('layout/plantilla')
 
-@section('seccion-container')
-
-    <h1>Detalle de nota:</h1>
+@section('seccion-main')
+    
+    <h1 class="display-4 mt-4">Detalle de nota:</h1>
     <h4>id: {{ $detalleNota['id'] }}</h4>
     <h4>nombre: {{ $detalleNota['nombre'] }}</h4>
     <h4>descripcion: {{ $detalleNota['descripcion'] }}</h4>

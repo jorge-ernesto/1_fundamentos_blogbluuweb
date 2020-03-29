@@ -9,7 +9,9 @@
             @include('layout.sb_admin.sidebar')        
             <div id="layoutSidenav_content">
                 <main>
-                    @yield('seccion-main')
+                    <div class="container-fluid">
+                        @yield('seccion-main')
+                    </div>
                 </main>
                 @include('layout.sb_admin.footer')        
             </div>
