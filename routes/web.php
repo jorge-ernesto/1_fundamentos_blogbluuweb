@@ -16,7 +16,7 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'NotasController@notas');
+Route::get('/', 'NotasController@listar');
 Route::get('/welcome', 'PagesController@welcome');
 Route::get('/blog', 'PagesController@blog')->name('enlace-blog'); //name denota como sera llamado de href
 Route::get('/about', 'PagesController@about')->name('enlace-about');
@@ -24,7 +24,7 @@ Route::get('/nosotros/{nombre?}', 'PagesController@nosotros')->name('enlace-noso
 
 /* Pruebas */
 Route::get('/fotos/{id?}', 'PagesController@fotos')->where('id', '[0-9]+'); //Solo aceptara números en el parametro
-Route::view('/landing', 'landing', ['wea' => "KKK"]); 
+Route::view('/sb_admin', 'sb_admin', ['wea' => "KKK"]); 
 
 /* Notas */
 Route::get('/notas/{id?}', 'NotasController@listar')->name('notas.listar');
