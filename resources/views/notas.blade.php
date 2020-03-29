@@ -14,7 +14,7 @@
         <h2>
             <a class="btn btn-primary" href="javascript:mostrarForm(true)">Agregar</a>
         </h2>
-        <table class="table table-bordered dataTable">
+        <table class="table">
             <thead>
             <tr>
                 <th scope="col" class="text-primary">id</th>
