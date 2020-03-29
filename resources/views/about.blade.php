@@ -1,5 +1,5 @@
 @extends('layout.plantilla')
 
-@section('seccion-container')
+@section('seccion-main')
     <h1>About</h1>
 @endsection

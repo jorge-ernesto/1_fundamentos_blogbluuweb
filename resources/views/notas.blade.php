@@ -1,6 +1,6 @@
 @extends('layout.plantilla')
 
-@section('seccion-container') 
+@section('seccion-main') 
     <!-- Alertas -->
     @if( session('mensaje') )
         <div class="alert alert-success">{{ session('mensaje') }}</div>

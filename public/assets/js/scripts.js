@@ -8,11 +8,17 @@
 
     // Add active state to sidbar nav links
     var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
-        $("#layoutSidenav_nav .sb-sidenav a.nav-link").each(function() {
-            if (this.href === path) {
-                $(this).addClass("active");
-            }
-        });
+    
+    /* Tomara el primer route de la url */    
+    path = path.split('/');
+    path = path[0] + '/'+ path[1] + '/' + path[2] + '/' + path[3];
+    console.log(path);
+
+    $("#layoutSidenav_nav .sb-sidenav a.nav-link").each(function() {
+        if (this.href === path) {
+            $(this).addClass("active");
+        }
+    });
 
     // Toggle the side navigation
     $("#sidebarToggle").on("click", function(e) {

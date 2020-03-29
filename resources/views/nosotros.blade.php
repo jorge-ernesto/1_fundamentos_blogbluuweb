@@ -1,6 +1,6 @@
 @extends('layout.plantilla')
 
-@section('seccion-container')
+@section('seccion-main')
     
     <h1>Este es mi equipo de trabajo</h1>
 
