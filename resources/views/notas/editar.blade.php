@@ -1,21 +1,7 @@
 @extends('layout/plantilla')
 
 @section('seccion-main')  
-    <!-- Alertas -->
-    <div class="mt-4">        
-        @if (session('mensaje'))
-            <div class="alert alert-success">{{ session('mensaje') }}</div>
-        @endif
-
-        @error('nombre')
-            <div class="alert alert-danger">El nombre es obligatorio</div>
-        @enderror
-
-        @error('descripcion')
-            <div class="alert alert-danger">La descripción es obligatoria</div>
-        @enderror        
-    </div>
-    <!-- Fin Alertas -->
+    @include('notas.alerts')
 
     <h1 class="display-4 mt-4">Editar</h1>
     <form method="POST" action="{{ route('notas.editar', $detalleNota['id']) }}">
