@@ -1,7 +1,6 @@
 @extends('layout.plantilla')
 
 @section('seccion-main')
-    
     <h1 class="mt-4">Nosotros</h1>
 
     @foreach($dataEquipo as $key=>$value)
@@ -13,5 +12,4 @@
     @else
         <p>La variable nombre no fue especificada</p>
     @endif
-
 @endsection

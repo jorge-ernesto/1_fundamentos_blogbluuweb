@@ -24,7 +24,7 @@ Route::get('/nosotros/{nombre?}', 'PagesController@nosotros')->name('enlace-noso
 
 /* Pruebas */
 Route::get('/fotos/{id?}', 'PagesController@fotos')->where('id', '[0-9]+'); //Solo aceptara números en el parametro
-Route::view('/sb_admin', 'sb_admin', ['wea' => "KKK"]); 
+Route::view('/about2', 'about', ['wea' => "KKK"]); 
 
 /* Notas */
 Route::get('/notas/{id?}', 'NotasController@listar')->name('notas.listar');

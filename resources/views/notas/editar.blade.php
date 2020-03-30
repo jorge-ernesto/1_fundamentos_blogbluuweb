@@ -1,7 +1,6 @@
 @extends('layout/plantilla')
 
-@section('seccion-main')
-    
+@section('seccion-main')  
     <!-- Alertas -->
     <div class="mt-4">        
         @if (session('mensaje'))
@@ -28,6 +27,5 @@
             <button class="btn btn-warning" type="submit">Editar</button>
             <a class="btn btn-primary" href="{{ route('notas.listar') }}">Atras</a>
         </h2>
-    </form>
-        
+    </form> 
 @endsection
