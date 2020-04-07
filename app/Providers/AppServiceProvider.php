@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema; //Agregado para soportar Emojis
+use Illuminate\Support\Facades\Schema; //Agregado para soportar migraciones
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        Schema::defaultStringLength(191); //Agregado para soportar Emojis
+        Schema::defaultStringLength(191); //Agregado para soportar migraciones
     }
 }

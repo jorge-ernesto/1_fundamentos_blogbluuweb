@@ -5,40 +5,59 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App; //Recuperando modelos, App es el namespace
-use Illuminate\Support\Facades\DB; //Ejecución de consultas SQL sin procesar
+use Illuminate\Support\Facades\DB; //Recuperando resultados
 
-/** 
-   DB
- * Base de datos
- * Ejecución de consultas SQL sin procesar
- * @link https://laravel.com/docs/7.x/database#running-queries
+/**
+   Controladores
+ * Los basicos
+ * Controladores de recursos
+ * @link https://laravel.com/docs/7.x/controllers#resource-controllers
  * 
- * Base de datos
- * Recuperando Resultados
- * @link https://laravel.com/docs/7.x/queries#retrieving-results
+ * Los basicos
+ * Validación
+ * @link https://laravel.com/docs/7.x/validation#quick-writing-the-validation-logic
+ * 
+   Modelos
+ * ORM Elocuent
+ * Definiendo modelos
+ * @link https://laravel.com/docs/7.x/eloquent#defining-models
  * 
    App
  * ORM Elocuent
  * Recuperando modelos
  * @link https://laravel.com/docs/7.x/eloquent#retrieving-models
  * 
- * ORM Elocuent
- * Subconsultas avanzadas
- * @link https://laravel.com/docs/7.x/eloquent#advanced-subqueries
+   DB
+ * Base de datos
+ * Ejecución de consultas SQL sin procesar
+ * @link https://laravel.com/docs/7.x/database#running-queries
+ * 
+ * Base de datos
+ * Recuperando resultados
+ * @link https://laravel.com/docs/7.x/queries#retrieving-results
+ * 
+   Comprobar data
+ * echo "<pre>";
+ * print_r($dataCategoria);
+ * echo "</pre>";
+ * die();
+ * 
+ * ->dd();
+ * dd($dataKKK);
  */
 
 class NotasController extends Controller
 {
-    public function listar($id = null){        
-        /* Obtenemos todo */
+    public function listar($id = null){
         if($id == null):
-            // $detalleNotas  = App\Nota::all();
+            $detalleNotas  = App\Nota::all();
             $detalleNotas  = App\Nota::paginate(10);
             $detalleNotas2 = DB::select('select * from notas');
-            return view('notas', compact('detalleNotas','detalleNotas2'));
+            $detalleNotas3 = DB::table('notas')
+                                ->get();
+            return view('notas', compact('detalleNotas', 'detalleNotas2', 'detalleNotas3'));
         endif;
-
-        /* Obtenemos el detalle por id */
+        
         $detalleNota = App\Nota::findOrFail($id);
         return view('notas.detalle', compact('detalleNota'));        
     }
@@ -76,7 +95,7 @@ class NotasController extends Controller
             'descripcion' => 'required'
         ]);
 
-        /* Editamos nota */
+        /* Guardamos nota */
         $notaActualizada              = App\Nota::find($id);
         $notaActualizada->nombre      = $request->nombre;
         $notaActualizada->descripcion = $request->descripcion;
@@ -85,6 +104,7 @@ class NotasController extends Controller
     }
 
     public function eliminar($id){
+        /* Eliminar nota */
         $notaEliminar = App\Nota::findOrFail($id);
         $notaEliminar->delete();
         return back()->with('mensaje_eliminado', 'Nota Eliminada');
