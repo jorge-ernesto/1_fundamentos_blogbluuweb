@@ -1,5 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('seccion-main')
-    <h1 class="mt-4">About</h1>
+    <div class="container-fluid">
+        <h1 class="mt-4">About</h1>
+    </div>
 @endsection
