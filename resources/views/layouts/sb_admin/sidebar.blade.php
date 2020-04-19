@@ -15,10 +15,10 @@
                 </a>
                 <div class="collapse" id="aprendiendoLaravel" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('enlace-blog') }}">Blog</a>
-                        <a class="nav-link" href="{{ route('enlace-about') }}">About</a>
-                        <a class="nav-link" href="{{ route('enlace-nosotros') }}">Nosotros</a>
-                        <a class="nav-link" href="{{ route('notas.listar') }}">Notas</a>
+                        <a class="nav-link" href="{{ route('blog.index') }}">Blog</a>
+                        <a class="nav-link" href="{{ route('about.index') }}">About</a>
+                        <a class="nav-link" href="{{ route('nosotros.index') }}">Nosotros</a>
+                        <a class="nav-link" href="{{ route('notas.index') }}">Notas</a>
                     </nav>
                 </div>
                

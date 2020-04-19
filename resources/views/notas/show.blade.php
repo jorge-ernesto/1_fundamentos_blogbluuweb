@@ -9,7 +9,7 @@
         <h4>created_at: {{ $detalleNota['created_at'] }}</h4>
         <h4>updated_at: {{ $detalleNota['updated_at'] }}</h4>
         <h2>
-            <a class="btn btn-primary" href="{{ route('notas.listar') }}">Atras</a>    
+            <a class="btn btn-primary" href="{{ route('notas.index') }}">Atras</a>    
         </h2>
     </div>
 @endsection

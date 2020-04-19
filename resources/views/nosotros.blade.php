@@ -5,7 +5,7 @@
         <h1 class="mt-4">Nosotros</h1>
 
         @foreach($dataEquipo as $key=>$value)
-            <a href="{{ route('enlace-nosotros', $value['nombre']) }}" class="h4 text-danger">{{ $value['nombre'] }}</a><br>
+            <a href="{{ route('nosotros.index', $value['nombre']) }}" class="h4 text-danger">{{ $value['nombre'] }}</a><br>
         @endforeach
 
         @if(isset($nombre))

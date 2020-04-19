@@ -25,17 +25,19 @@
                     @foreach($detalleNotas as $key=>$value)
                         <tr>
                             <th>
-                                <a href="{{ route('notas.listar', $value['id']) }}">{{ $value['id'] }}</a>
+                                <a href="{{ route('notas.index', $value['id']) }}">{{ $value['id'] }}</a>
                             </th>
                             <td>{{ $value['nombre'] }}</td>
                             <td>{{ $value['descripcion'] }}</td>
                             <td>{{ $value['created_at'] }}</td>
                             <td>{{ $value['updated_at'] }}</td>
                             <td>
-                                <a href="{{ route('notas.buscar', $value['id']) }}" class="btn btn-warning btn-sm">Editar</a>
+                                <a href="{{ route('notas.edit', $value['id']) }}" class="btn btn-warning btn-sm">Editar</a>
                             </td>
                             <td>
-                                <a href="{{ route('notas.eliminar', $value['id']) }}" class="btn btn-warning btn-sm">Eliminar</a>
+                                <a class="btn btn-warning btn-sm" onclick="destroy('{{ route('notas.destroy', $value['id']) }}')">
+                                    Eliminar
+                                </a>
                             </td>
                         </tr>
                     @endforeach
@@ -52,20 +54,20 @@
 
         <div id="formularioRegistros">
             <h1 class="display-4 mt-4">Agregar</h1>
-            <form method="POST" action="{{ route('notas.guardar') }}">
+            <form method="POST" action="{{ route('notas.store') }}">
                 @csrf
                 <input type="text" name="nombre" placeholder="Nombre" class="form-control mb-2" value="{{ old('nombre') }}">
                 <input type="text" name="descripcion" placeholder="Descripcion" class="form-control mb-2" value="{{ old('descripcion') }}">            
                 <h2>
                     <button class="btn btn-primary" type="submit">Agregar</button>
-                    <a class="btn btn-primary" href="{{ route('notas.listar') }}">Atras</a>
+                    <a class="btn btn-primary" href="{{ route('notas.index') }}">Atras</a>
                 </h2>
             </form>
         </div>
     </div>
 @endsection
 
-@section('seccion-scripts')
+@section('seccion-scripts')   
     <script src="{{ asset('assets/js/notas.js') }}"></script>
 
     @if( $errors->any() || session('mensaje') )
@@ -73,5 +75,14 @@
             mostrarForm(true);
             console.log('Hay alertas');
         </script>
-    @endif
+    @endif    
+
+    <script>
+        function destroy(url){
+            res = confirm('¿Desea eliminar el registro?');
+            if(res){                
+                window.location.href = url;                
+            }
+        }
+    </script>
 @endsection
