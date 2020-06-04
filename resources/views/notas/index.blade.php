@@ -70,6 +70,7 @@
 @section('seccion-scripts')   
     <script src="{{ asset('assets/js/notas.js') }}"></script>
 
+    <!-- Si hay algun error o mensaje de confirmación -->
     @if( $errors->any() || session('mensaje') )
         <script>
             mostrarForm(true);

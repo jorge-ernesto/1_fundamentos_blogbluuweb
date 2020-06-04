@@ -1,5 +1,5 @@
-{{-- Alertas --}}
 <div class="mt-4">
+    {{-- Alertas --}}
     @if( session('mensaje') )
         <div class="alert alert-success">{{ session('mensaje') }}</div>
     @endif
@@ -11,6 +11,7 @@
     @if( session('mensaje_rollback') )
         <div class="alert alert-danger">{{ session('mensaje_rollback') }}</div>
     @endif
+    {{-- Fin Alertas --}}
 
     {{-- Errores --}}
     @error('nombre')
@@ -22,4 +23,3 @@
     @endif    
     {{-- Fin Errores --}}
 </div>
-{{-- Fin Alertas --}}
