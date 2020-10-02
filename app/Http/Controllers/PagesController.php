@@ -6,19 +6,23 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function welcome(){
+    public function welcome()
+    {
         return view('welcome');
     }
 
-    public function blog(){
+    public function blog()
+    {
         return view('blog');
     }
 
-    public function about(){
+    public function about()
+    {
         return view('about');
     }
 
-    public function nosotros($nombre = null){
+    public function nosotros($nombre = null)
+    {
         $dataEquipo = array();
         $dataEquipo[]['nombre'] = "Ignacio";
         $dataEquipo[]['nombre'] = "Jorge";
@@ -28,7 +32,8 @@ class PagesController extends Controller
         return view('nosotros', compact('dataEquipo','nombre'));
     }
 
-    public function fotos($id = null){
+    public function fotos($id = null)
+    {
         $id = isset($id) ? $id : "Sin número";
         return 'Estas en la galería de fotos: '.$id;
     }
