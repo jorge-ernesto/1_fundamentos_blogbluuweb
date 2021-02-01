@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', 'NotasController@index');
+Route::get('/', function () {           
+    return redirect()->route('notas.index');
+});
 
 //RUTAS DE LA APLICACION        
     //Rutas de paginas
